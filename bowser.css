@@ -1321,7 +1321,7 @@ footer#footer #ot-sdk-btn:hover,
     position: fixed !important;          /* <- DAS ist der Gamechanger */              /* gleiche Höhe wie Logo */
     right: 16px !important;              /* rechter Bildschirmrand */
     left: auto !important;
-    top: 24px !important;
+    top: 20px !important;
     transform: none!important;
 
 
