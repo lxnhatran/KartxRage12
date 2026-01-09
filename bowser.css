@@ -945,3 +945,35 @@ footer#footer #ot-sdk-btn:hover,
     justify-content: flex-end !important;
   }
 }
+/* ===== BURGER NUR MOBILE, DESKTOP UNVERÄNDERT ===== */
+.mobile-burger{
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.mobile-burger span{
+  display: block;
+  width: 26px;
+  height: 2px;
+  margin: 6px 0;
+  background: #e0e0e0;
+}
+
+/* ab Mobile: Desktop-Menü ausblenden, Burger einblenden */
+@media (max-width: 768px){
+  #header nav#menu{
+    display: none !important;
+  }
+  .mobile-burger{
+    display: inline-block;
+  }
+
+  /* Logo etwas kompakter/oben (nur Mobile) */
+  #header .header-logo-image{
+    height: 85px !important;
+  }
+}
