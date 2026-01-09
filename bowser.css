@@ -4,8 +4,9 @@
 .header-logo{
   display: inline-block;
   max-width: 600px;
-  margin-top: -20px;
+  margin-top: 0;   /* statt -20px */
 }
+
 
 .header-logo-image{
   height: 150px !important;
@@ -15,27 +16,17 @@
   display: block;
 }
 
-/* Tablet */
 @media (max-width: 991px){
   .header-logo{
-    max-width: 450px;
-    margin-top: -15px;
+    margin-top: 0; /* statt -15px */
   }
-  .header-logo-image{
-    height: 110px !important;
+}
+@media (max-width: 768px){
+  .header-logo{
+    margin-top: 0; /* statt -10px */
   }
 }
 
-/* Mobile */
-@media (max-width: 768px){
-  .header-logo{
-    max-width: 350px;
-    margin-top: -10px;
-  }
-  .header-logo-image{
-    height: 85px !important;
-  }
-}
 
 /* ===========================================
    LIFESTYLE IMAGES SECTION
@@ -945,38 +936,7 @@ footer#footer #ot-sdk-btn:hover,
     justify-content: flex-end !important;
   }
 }
-/* ===== BURGER NUR MOBILE, DESKTOP UNVERÄNDERT ===== */
-.mobile-burger{
-  display: none;
-  background: transparent;
-  border: 0;
-  padding: 10px;
-  margin-left: auto;
-  cursor: pointer;
-}
 
-.mobile-burger span{
-  display: block;
-  width: 26px;
-  height: 2px;
-  margin: 6px 0;
-  background: #e0e0e0;
-}
-
-/* ab Mobile: Desktop-Menü ausblenden, Burger einblenden */
-@media (max-width: 768px){
-  #header nav#menu{
-    display: none !important;
-  }
-  .mobile-burger{
-    display: inline-block;
-  }
-
-  /* Logo etwas kompakter/oben (nur Mobile) */
-  #header .header-logo-image{
-    height: 85px !important;
-  }
-}
 
 /* ===== Mobile Burger (nur Anzeige, kein Menü) ===== */
 .mobile-burger{
@@ -1005,4 +965,56 @@ footer#footer #ot-sdk-btn:hover,
 /* Desktop: Burger aus */
 @media (min-width: 992px){
   .mobile-burger{ display: none !important; }
+}
+
+/* ===========================================
+   HEADER + BURGER – FINAL & SAUBER
+   =========================================== */
+
+/* Burger standardmäßig AUS (Desktop) */
+.mobile-burger{
+  display: none;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+/* Burger Linien */
+.mobile-burger span{
+  all: unset;
+  display: block !important;
+  width: 26px !important;
+  height: 2px !important;
+  margin: 6px 0 !important;
+  background: #e0e0e0 !important;
+  border-radius: 2px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  /* Desktop-Navi aus */
+  #header nav#menu{
+    display: none !important;
+  }
+
+  /* Burger an */
+  .mobile-burger{
+    display: inline-flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* Logo kompakter */
+  #header .header-logo-image{
+    height: 95px !important;
+  }
+}
+
+/* Desktop: Burger GARANTIERT aus */
+@media (min-width: 769px){
+  .mobile-burger{
+    display: none !important;
+  }
 }
