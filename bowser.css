@@ -1225,3 +1225,82 @@ footer#footer #ot-sdk-btn:hover,
     margin: 6px 0 !important;
   }
 }
+
+/* =========================================================
+   FINAL MOBILE HEADER FIX (für DEINEN Header-Code)
+   - Logo links
+   - Burger immer rechts mit Abstand
+   - Desktop-Menü bleibt auf Desktop
+   ========================================================= */
+
+#header .header-row{
+  position: relative !important;
+}
+
+/* SVG-Farbe setzen (sonst evtl. transparent/gray) */
+.mobile-burger svg rect{
+  fill: #e0e0e0 !important;
+}
+
+/* Desktop: Burger aus */
+@media (min-width: 769px){
+  .mobile-burger{ display: none !important; }
+}
+
+/* Mobile: Desktop-Menü aus, Burger rechts */
+@media (max-width: 768px){
+
+  /* Desktop-Menü aus */
+  #header nav#menu{
+    display: none !important;
+  }
+
+  /* Linke Spalte (Logo) sauber */
+  #header .header-left{
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #header .header-logo{
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+
+  #header .header-logo-image{
+    height: 90px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  /* Rechte Spalte darf NICHT den Burger verschieben */
+  #header .header-right{
+    position: static !important;
+  }
+
+  /* Burger IMMER rechts oben, unabhängig vom Grid */
+  .mobile-burger{
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 18px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 99999 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    padding: 10px !important;
+    margin: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+    cursor: pointer !important;
+  }
+
+  /* SVG: fixe Größe, damit es nicht “verzogen” wird */
+  .mobile-burger svg{
+    width: 34px !important;
+    height: 34px !important;
+    display: block !important;
+  }
+}
