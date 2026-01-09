@@ -1353,3 +1353,44 @@ footer#footer #ot-sdk-btn:hover,
     display: none !important;
   }
 }
+
+/* ===== DESKTOP LOGO FIX ===== */
+@media (min-width: 992px){
+  #header .header-left{
+    display: flex !important;
+    align-items: flex-start !important; /* statt center */
+  }
+
+  #header .header-logo{
+    margin-top: 0 !important;   /* falls vorher negativ/positiv */
+    padding-top: 6px !important; /* feinjustieren */
+  }
+
+  #header .header-logo-image{
+    height: 120px !important; /* optional, nur falls nötig */
+  }
+}
+
+/* ===== MOBILE AUCH IM LANDSCAPE ===== */
+@media (max-width: 768px), (max-height: 500px){
+
+  /* Burger sichtbar */
+  .mobile-burger{
+    display: flex !important;
+  }
+
+  /* Desktop-Navi aus */
+  #header nav,
+  #header .menu-primary-menu-container{
+    display: none !important;
+  }
+
+  /* Logo mobile-Position beibehalten */
+  #header .header-left{
+    align-items: center !important;
+  }
+
+  #header .header-logo{
+    padding-top: 0 !important;
+  }
+}
