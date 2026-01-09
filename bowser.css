@@ -1398,6 +1398,6 @@ footer#footer #ot-sdk-btn:hover,
 /* DESKTOP ONLY – Logo minimal nach oben */
 @media (min-width: 992px){
   #header .header-logo{
-    margin-top: -15px !important;
+    margin-top: -40px !important;
   }
 }
