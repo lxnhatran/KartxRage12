@@ -1283,6 +1283,7 @@ footer#footer #ot-sdk-btn:hover,
     display: inline-flex !important;
     position: absolute !important;
     right: 18px !important;
+    left: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 99999 !important;
