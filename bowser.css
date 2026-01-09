@@ -152,3 +152,184 @@
   #product-hero .ph-h-buttons{ display:none !important; }
 }
 
+/* =========================================================
+   SAFETY OVERRIDES (GANZ UNTEN EINFÜGEN)
+   ========================================================= */
+
+/* Hintergrund überall dunkel erzwingen (falls irgendwo weiß reinfunkt) */
+html, body {
+  background: #0a0a0a !important;
+  color: #e0e0e0 !important;
+}
+
+main, section, .container, #page, #content {
+  background: transparent !important;
+}
+
+/* ---------- DESKTOP (ab 769px): wieder "wie vorher" ---------- */
+@media (min-width: 769px){
+
+  /* Mobile Elemente AUS */
+  #header .header-icon,
+  #header .burger,
+  #header .nav,
+  #header .menu-toggle{
+    display: none !important;
+  }
+
+  /* Desktop-Nav AN (dein altes Menü horizontal) */
+  #header nav.desktop-nav,
+  #header nav#menu,
+  #header .for-slicknav,
+  #header .menu-primary-menu-container{
+    display: block !important;
+  }
+
+  #header nav.desktop-nav ul.menu,
+  #header nav#menu ul.menu{
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  /* Header-Container wieder normal (kein Mobile-Grid) */
+  #header .header-bar,
+  #header .container{
+    display: block;
+  }
+}
+
+/* ---------- MOBILE (bis 768px): CANINE-Style Header ---------- */
+@media (max-width: 768px){
+
+  /* Desktop-Nav im Mobile AUS */
+  #header nav.desktop-nav,
+  #header nav#menu,
+  #header .for-slicknav,
+  #header .menu-primary-menu-container{
+    display: none !important;
+  }
+
+  /* Sticky-Leiste weg, damit oben KEINE doppelten Buttons */
+  #product-sticky{
+    display: none !important;
+  }
+
+  /* Header Bar: 3 Spalten */
+  #header .header-bar,
+  #header .container.header-bar{
+    display: grid !important;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    padding: 14px 12px;
+    position: relative;
+  }
+
+  /* Checkbox offscreen (NICHT display:none!) */
+  #header .menu-toggle{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  /* Linker Icon Button */
+  #header .header-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    z-index: 10001;
+  }
+
+  /* Logo mittig */
+  #header .header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  #header .header-logo-image,
+  #header .header-logo img{
+    height: 42px !important;
+    width: auto !important;
+    display: block;
+  }
+
+  /* Burger rechts */
+  #header .burger{
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    z-index: 10001;
+  }
+
+  #header .burger span{
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.25s;
+  }
+
+  /* Overlay Menü */
+  #header .nav{
+    position: fixed;
+    inset: 0;
+    background: #1c1c1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s;
+    z-index: 9999;
+  }
+
+  #header .nav a{
+    color: #fff !important;
+    font-size: 22px;
+    text-decoration: none;
+  }
+
+  /* OPEN state (wichtig: input direkt vor .header-bar!) */
+  #header .menu-toggle:checked + .header-bar .nav,
+  #header .menu-toggle:checked + .container.header-bar .nav{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Burger -> X */
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(1),
+  #header .menu-toggle:checked + .container.header-bar .burger span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(2),
+  #header .menu-toggle:checked + .container.header-bar .burger span:nth-child(2){
+    opacity: 0;
+  }
+
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(3),
+  #header .menu-toggle:checked + .container.header-bar .burger span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
