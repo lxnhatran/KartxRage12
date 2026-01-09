@@ -1392,5 +1392,6 @@ footer#footer #ot-sdk-btn:hover,
 
   #header .header-logo{
     padding-top: 0 !important;
+    margin-top: -10px !important;
   }
 }
