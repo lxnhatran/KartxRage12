@@ -1154,3 +1154,74 @@ footer#footer #ot-sdk-btn:hover,
     display: none !important;
   }
 }
+
+/* ===== FINAL FIX: Burger IMMER rechts oben (Mobile) ===== */
+@media (max-width: 768px){
+
+  /* Header-Layout stabilisieren */
+  #header{
+    position: relative !important;
+  }
+
+  /* Bootstrap-Row darf nicht komisch umbrechen */
+  #header .row.position-relative{
+    position: relative !important;
+    align-items: center !important;
+  }
+
+  /* Logo darf nicht nach unten rutschen */
+  #header .col-lg-2{
+    display: flex !important;
+    align-items: center !important;
+  }
+  #header .header-logo{
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  #header .header-logo-image{
+    height: 90px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  /* Desktop-Menü aus */
+  #header nav#menu,
+  #header .menu-primary-menu-container,
+  #header .for-slicknav{
+    display: none !important;
+  }
+
+  /* Burger rechts oben – unabhängig vom Grid */
+  .mobile-burger{
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 9999 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+  }
+
+  /* Falls du SVG nutzt */
+  .mobile-burger svg{
+    width: 28px !important;
+    height: 28px !important;
+    display: block !important;
+  }
+
+  /* Falls du 3 SPAN-Balken nutzt */
+  .mobile-burger span{
+    all: unset;
+    display: block !important;
+    width: 26px !important;
+    height: 2px !important;
+    background: #e0e0e0 !important;
+    border-radius: 2px !important;
+    margin: 6px 0 !important;
+  }
+}
