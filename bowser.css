@@ -1305,3 +1305,49 @@ footer#footer #ot-sdk-btn:hover,
     display: block !important;
   }
 }
+
+/* ================================
+   FINAL – BURGER FIX (VIEWPORT)
+   ================================ */
+@media (max-width: 768px){
+
+  /* Header ist Referenz */
+  #header{
+    position: relative !important;
+  }
+
+  /* Burger IMMER rechts am Bildschirm */
+  .mobile-burger{
+    position: fixed !important;          /* <- DAS ist der Gamechanger */
+    top: 22px !important;                /* gleiche Höhe wie Logo */
+    right: 16px !important;              /* rechter Bildschirmrand */
+    left: auto !important;
+
+    z-index: 100000 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    padding: 8px !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-burger svg{
+    width: 32px !important;
+    height: 32px !important;
+    display: block !important;
+  }
+
+  .mobile-burger svg rect{
+    fill: #e0e0e0 !important;
+  }
+
+  /* Desktop-Menü aus */
+  #header nav,
+  #header .menu-primary-menu-container{
+    display: none !important;
+  }
+}
