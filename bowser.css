@@ -1018,3 +1018,78 @@ footer#footer #ot-sdk-btn:hover,
     display: none !important;
   }
 }
+
+/* ===========================================
+   FIX 1: Header – Logo & Burger auf einer Linie (Mobile)
+   =========================================== */
+@media (max-width: 768px){
+
+  /* Bootstrap-Row im Header zu einer echten "Top-Leiste" machen */
+  #header .container .row.position-relative{
+    display: flex !important;
+    align-items: center !important;      /* <- gleiche Höhe */
+    justify-content: space-between !important;
+  }
+
+  /* Logo-Spalte nicht mehr 100% breit */
+  #header .col-lg-2{
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Rechte Spalte nur für Burger – rechts ausrichten */
+  #header .col-lg-10{
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Burger exakt mittig zur Logo-Höhe */
+  .mobile-burger{
+    margin: 0 !important;
+    padding: 10px !important;
+    align-self: center !important;
+  }
+
+  /* Logo minimal stabilisieren */
+  .header-logo{
+    margin: 0 !important;
+  }
+  #header .header-logo-image{
+    height: 95px !important;
+    display: block !important;
+  }
+}
+
+
+/* ===========================================
+   FIX 2: Fehlender Text in Sections (Mobile/Tablet)
+   Ursache: dein Inline-CSS setzt auf kleineren Screens
+   background: #ffffff UND color: #ffffff -> Text unsichtbar.
+   =========================================== */
+
+/* No limits. No mercy. (sec3) – Text sichtbar machen */
+@media (max-width: 991px){
+  #sec3.feature-section-x .fx-content-container{
+    background: #ffffff !important;
+    color: #404042 !important;
+  }
+  #sec3.feature-section-x .fx-content-container *{
+    color: #404042 !important;
+  }
+}
+
+/* Own the night. (sec4) – Text sichtbar machen */
+@media (max-width: 991px){
+  #sec4.feature-section-x .fx-content-container{
+    background: #ffffff !important;
+    color: #404042 !important;
+  }
+  #sec4.feature-section-x .fx-content-container *{
+    color: #404042 !important;
+  }
+}
