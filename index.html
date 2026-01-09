@@ -230,34 +230,33 @@
     </style>
 </head>
     </script>
-   <header id="header" class="">
+<header id="header">
+  <input type="checkbox" id="menu" class="menu-toggle">
+  
   <div class="container">
-    <div class="row position-relative">
-      <!-- Logo links -->
-      <div class="col-lg-2 align-self-center">
-        <a href="#top" class="header-logo">
-          <img src="KartxLinhipop.png" alt="Kartx Linhipop" class="header-logo-image custom-logo">
-        </a>
-      </div>
-
-      <!-- Navigation rechts -->
-      <div class="col-lg-10 align-self-center position-static">
-        <nav id="menu" class="for-slicknav">
-          <div class="menu-primary-menu-container text-right">
-            <ul id="menu-primary-menu" class="menu">
-              <li class="menu-item"><a href="#hero">Racing</a></li>
-              <li class="menu-item"><a href="#moodboard">Smart</a></li>
-              <li class="menu-item"><a href="#features">kartx</a></li>
-              <li class="menu-item"><a href="#film">Batterie</a></li>
-              <li class="menu-item"><a href="#vergleich">Produktvergleich</a></li>
-              <li class="menu-item"><a href="#inspo">Inspiration</a></li>
-              <li class="menu-item"><a href="#b2b">B2B</a></li>
-              <li class="menu-item"><a href="#more">Mehr</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
+    <!-- Logo mittig -->
+    <a href="#top" class="header-logo">
+      <img src="KartxLinhipop.png" alt="Kartx">
+    </a>
+    
+    <!-- Burger Button -->
+    <label for="menu" class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#hero">Racing</a>
+      <a href="#moodboard">Smart</a>
+      <a href="#features">kartx</a>
+      <a href="#film">Batterie</a>
+      <a href="#vergleich">Produktvergleich</a>
+      <a href="#inspo">Inspiration</a>
+      <a href="#b2b">B2B</a>
+      <a href="#more">Mehr</a>
+    </nav>
   </div>
 </header>
 
@@ -1021,6 +1020,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
 </body>
 </html>
