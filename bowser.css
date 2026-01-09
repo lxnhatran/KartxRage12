@@ -1093,3 +1093,63 @@ footer#footer #ot-sdk-btn:hover,
     color: #404042 !important;
   }
 }
+
+/* ===========================================
+   MOBILE HEADER – LOGO LINKS / BURGER RECHTS
+   =========================================== */
+@media (max-width: 768px){
+
+  /* Header-Grundlayout */
+  #header .container{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 16px !important;
+  }
+
+  /* Logo links */
+  .header-logo{
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .header-logo img{
+    height: 90px !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  /* Burger rechts */
+  .mobile-burger{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: 0 !important;
+    padding: 6px !important;
+    margin: 0 !important;
+    cursor: pointer;
+  }
+
+  .mobile-burger svg{
+    width: 26px;
+    height: 26px;
+    fill: #e0e0e0;
+    display: block;
+  }
+
+  /* Desktop-Navigation ausblenden */
+  #header nav,
+  #header .menu-primary-menu-container,
+  #header .for-slicknav{
+    display: none !important;
+  }
+}
+
+/* Desktop: Burger komplett weg */
+@media (min-width: 769px){
+  .mobile-burger{
+    display: none !important;
+  }
+}
