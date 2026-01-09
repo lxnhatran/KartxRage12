@@ -1,15 +1,17 @@
-@media (max-width: 768px) {
 
-  /* Container als Header-Bar */
-  #header .container{
-    display:flex;
+
+  @media (max-width: 768px){
+
+  /* Header Bar wie CANINE: 3 Spalten */
+  #header .header-bar{
+    display:grid !important;
+    grid-template-columns: 44px 1fr 44px;
     align-items:center;
-    justify-content:center;
+    padding: 14px 12px;
     position:relative;
-    padding: 12px 0;
   }
 
-  /* Checkbox: NICHT display:none, sondern offscreen */
+  /* Checkbox offscreen (NICHT display:none!) */
   #header .menu-toggle{
     position:absolute;
     left:-9999px;
@@ -18,44 +20,58 @@
     opacity:0;
   }
 
-  /* Logo mittig */
+  /* Left icon */
+  #header .header-icon{
+    width:44px;
+    height:44px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* Center logo */
   #header .header-logo{
-    margin: 0 auto;
     display:flex;
     justify-content:center;
     align-items:center;
+    margin:0 !important;
   }
 
-  #header .header-logo img{
-    height: 80px !important;
-    width: auto !important;
+  #header .header-logo-image{
+    height: 42px !important;  /* so wie CANINE clean */
+    width:auto !important;
     display:block;
   }
 
-  /* Burger rechts */
+  /* Burger rechts (in Grid-Spalte 3) */
   #header .burger{
-    position:absolute;
-    right:16px;
-    top:50%;
-    transform:translateY(-50%);
-    width:30px;
-    height:24px;
+    width:44px;
+    height:44px;
+    border-radius:999px;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:center;
+    gap:6px;
+    align-items:center;
     cursor:pointer;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
     z-index:10001;
   }
 
   #header .burger span{
-    width:100%;
-    height:3px;
+    width:22px;
+    height:2px;
     background:#fff;
     border-radius:2px;
     transition:0.3s;
   }
 
-  /* Nav Overlay (hidden default) */
+  /* Overlay Nav */
   #header .nav{
     position:fixed;
     inset:0;
@@ -64,10 +80,10 @@
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap: 14px;
+    gap:14px;
     opacity:0;
     pointer-events:none;
-    transition:0.3s;
+    transition:0.25s;
     z-index:9999;
   }
 
@@ -77,28 +93,62 @@
     text-decoration:none;
   }
 
-  #header .nav a:hover{
-    color:#c85d85 !important;
-  }
-
-  /* OPEN state – wichtig: checked + .container (weil .container direkt nach input kommt) */
-  #header .menu-toggle:checked + .container .nav{
+  /* Open state: input + .header-bar ist direkt danach */
+  #header .menu-toggle:checked + .header-bar .nav{
     opacity:1;
     pointer-events:auto;
   }
 
-  /* Burger -> X Animation */
-  #header .menu-toggle:checked + .container .burger span:nth-child(1){
-    transform: translateY(10.5px) rotate(45deg);
+  /* Burger -> X */
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
   }
-  #header .menu-toggle:checked + .container .burger span:nth-child(2){
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(2){
     opacity:0;
   }
-  #header .menu-toggle:checked + .container .burger span:nth-child(3){
-    transform: translateY(-10.5px) rotate(-45deg);
+  #header .menu-toggle:checked + .header-bar .burger span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* (optional) Scroll sperren wenn Menü offen – funktioniert nur mit JS,
-     ohne JS geht's nicht zuverlässig. */
+  /* Desktop Nav verstecken */
+  #header nav#menu,
+  #header .for-slicknav,
+  #header .menu-primary-menu-container{
+    display:none !important;
+  }
 }
-@media (max-width: 768px){ #product-sticky{ display:none !important; } }
+
+
+@media (max-width: 768px){
+  /* Sticky-Leiste komplett weg (damit oben KEINE Buttons mehr sind) */
+  #product-sticky{
+    display: none !important;
+  }
+}
+@media (max-width: 768px){
+  /* Hero Buttons zentriert + schöner */
+  #product-hero .ph-h-buttons{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:10px !important;
+    width:100% !important;
+    margin: 12px auto 0 !important;
+  }
+
+  /* Wenn die Buttons bei dir gestackt sind: */
+  #product-hero .ph-h-buttons{
+    flex-direction: column !important;
+    max-width: 320px !important;
+  }
+
+  #product-hero .ph-h-buttons .header-button{
+    width: 100% !important;
+    text-align:center !important;
+  }
+}
+
+@media (max-width: 768px){
+  #product-hero .ph-h-buttons{ display:none !important; }
+}
+
