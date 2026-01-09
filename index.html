@@ -233,16 +233,17 @@
 
      <header id="header" class="">
   <div class="container">
-    <div class="row position-relative">
+    <div class="row position-relative align-items-center">
+
       <!-- Logo links -->
-      <div class="col-lg-2 align-self-center">
+      <div class="col-lg-2 col-8 align-self-center">
         <a href="#top" class="header-logo">
           <img src="KartxLinhipop.png" alt="Kartx Linhipop" class="header-logo-image custom-logo">
         </a>
       </div>
 
-      <!-- Navigation rechts -->
-      <div class="col-lg-10 align-self-center position-static">
+      <!-- Navigation rechts (Desktop) -->
+      <div class="col-lg-10 d-none d-lg-block align-self-center position-static">
         <nav id="menu" class="for-slicknav">
           <div class="menu-primary-menu-container text-right">
             <ul id="menu-primary-menu" class="menu">
@@ -258,14 +259,18 @@
           </div>
         </nav>
       </div>
-    </div><button class="mobile-burger" aria-label="Menü öffnen" type="button">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
+      <!-- Burger rechts (Mobile) -->
+      <div class="col-4 d-lg-none text-right">
+        <button class="mobile-burger" aria-label="Menü" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
   </div>
 </header>
+
 
 
 

@@ -977,3 +977,32 @@ footer#footer #ot-sdk-btn:hover,
     height: 85px !important;
   }
 }
+
+/* ===== Mobile Burger (nur Anzeige, kein Menü) ===== */
+.mobile-burger{
+  display: inline-flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+/* extrem wichtig: Fremd-CSS killen */
+.mobile-burger span{
+  all: unset;                  /* verhindert 100%-Breite durch Theme */
+  display: block !important;
+  width: 26px !important;
+  max-width: 26px !important;
+  height: 2px !important;
+  background: #e0e0e0 !important;
+  border-radius: 2px !important;
+}
+
+/* Desktop: Burger aus */
+@media (min-width: 992px){
+  .mobile-burger{ display: none !important; }
+}
