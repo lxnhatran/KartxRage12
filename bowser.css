@@ -1401,3 +1401,128 @@ footer#footer #ot-sdk-btn:hover,
     margin-top: -40px !important;
   }
 }
+/* ===== DESKTOP HEADER FIX - Mehr Platz für Logo ===== */
+@media (min-width: 992px) {
+  #header {
+    min-height: 160px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #header .container {
+    width: 100%;
+  }
+
+  #header .header-row {
+    align-items: center !important;
+    min-height: 160px !important;
+  }
+
+  /* Navigation RECHTS ausrichten */
+  #header .header-right {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  #header nav#menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  #header .menu-primary-menu-container {
+    text-align: right !important;
+  }
+
+  #header nav ul.menu {
+    margin: 0 !important;
+    justify-content: flex-end !important;
+  }
+}
+
+/* Mobile bleibt unverändert */
+@media (max-width: 991px) {
+  #header {
+    min-height: auto !important;
+  }
+}
+
+/* ===== PRODUCT HERO HEADER - Desktop ohne Box, Mobile mit Box ===== */
+
+/* Desktop: Keine Box, nur Inhalt sichtbar */
+@media (min-width: 992px) {
+  #product-hero .ph-header {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Elemente schön verteilen */
+  #product-hero .ph-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 40px !important;
+  }
+
+  #product-hero .ph-header .inline-block-fix {
+    background: transparent !important;
+  }
+}
+
+/* Tablet & Mobile: Box bleibt wie gewohnt */
+@media (max-width: 991px) {
+  #product-hero .ph-header {
+    background: linear-gradient(135deg, #1c1c1e 0%, #252528 100%) !important;
+    padding: 24px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    margin-bottom: 32px !important;
+  }
+}
+/* ===== HEADER - GLEICHE FARBE WIE PRODUCT HERO (keine Kante) ===== */
+@media (min-width: 992px) {
+  #header {
+    background: radial-gradient(ellipse at top, #1a0a1f 0%, #0d0d0d 50%, #000000 100%) !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Optional: Sanfter Übergang */
+  #header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: transparent !important;
+  }
+}
+
+/* Mobile: Original Anthrazit-Stil bleibt */
+@media (max-width: 991px) {
+  #header {
+    background: linear-gradient(180deg, #1c1c1e 0%, #2a2a2c 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+/* ===== PRODUCT HERO HEADER - Nach unten schieben ===== */
+@media (min-width: 992px) {
+  #product-hero .ph-header {
+    margin-top: 60px !important; /* Abstand nach oben */
+    margin-bottom: 40px !important;
+  }
+}
+
+/* Mobile bleibt unverändert */
+@media (max-width: 991px) {
+  #product-hero .ph-header {
+    margin-top: 20px !important;
+  }
+}
