@@ -230,54 +230,34 @@
     </style>
 </head>
     </script>
-<header id="header">
-  <!-- Mobile toggle -->
-  <input type="checkbox" id="menu" class="menu-toggle">
+<header id="header" class="">
+  <div class="container">
+    <div class="row position-relative">
+      <!-- Logo links -->
+      <div class="col-lg-2 align-self-center">
+        <a href="#top" class="header-logo">
+          <img src="KartxLinhipop.png" alt="Kartx Linhipop" class="header-logo-image custom-logo">
+        </a>
+      </div>
 
-  <div class="container header-bar">
-    <!-- Desktop Logo (wie vorher, links) -->
-    <a href="#top" class="header-logo">
-      <img src="KartXLinipop.png" alt="KartX" class="header-logo-image">
-    </a>
-
-    <!-- Desktop Navigation (wie vorher) -->
-    <nav id="menu-desktop" class="desktop-nav">
-      <ul class="menu">
-        <li class="menu-item"><a href="#hero">Racing</a></li>
-        <li class="menu-item"><a href="#moodboard">Smart</a></li>
-        <li class="menu-item"><a href="#features">kartx</a></li>
-        <li class="menu-item"><a href="#film">Batterie</a></li>
-        <li class="menu-item"><a href="#vergleich">Produktvergleich</a></li>
-        <li class="menu-item"><a href="#inspo">Inspiration</a></li>
-        <li class="menu-item"><a href="#b2b">B2B</a></li>
-        <li class="menu-item"><a href="#more">Mehr</a></li>
-      </ul>
-    </nav>
-
-    <!-- Mobile Left Icon -->
-    <a href="#search" class="header-icon" aria-label="Suche">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M10.5 19a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17Z" stroke="currentColor" stroke-width="2"/>
-        <path d="M16.8 16.8 22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <!-- Mobile Burger -->
-    <label for="menu" class="burger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </label>
-
-    <!-- Mobile Overlay Nav -->
-    <nav class="nav" aria-label="Mobile Navigation">
-      <a href="#hero" onclick="document.getElementById('menu').checked=false">Racing</a>
-      <a href="#moodboard" onclick="document.getElementById('menu').checked=false">Smart</a>
-      <a href="#features" onclick="document.getElementById('menu').checked=false">kartx</a>
-      <a href="#film" onclick="document.getElementById('menu').checked=false">Batterie</a>
-      <a href="#vergleich" onclick="document.getElementById('menu').checked=false">Produktvergleich</a>
-      <a href="#inspo" onclick="document.getElementById('menu').checked=false">Inspiration</a>
-      <a href="#b2b" onclick="document.getElementById('menu').checked=false">B2B</a>
-      <a href="#more" onclick="document.getElementById('menu').checked=false">Mehr</a>
-    </nav>
+      <!-- Navigation rechts -->
+      <div class="col-lg-10 align-self-center position-static">
+        <nav id="menu" class="for-slicknav">
+          <div class="menu-primary-menu-container text-right">
+            <ul id="menu-primary-menu" class="menu">
+              <li class="menu-item"><a href="#hero">Racing</a></li>
+              <li class="menu-item"><a href="#moodboard">Smart</a></li>
+              <li class="menu-item"><a href="#features">kartx</a></li>
+              <li class="menu-item"><a href="#film">Batterie</a></li>
+              <li class="menu-item"><a href="#vergleich">Produktvergleich</a></li>
+              <li class="menu-item"><a href="#inspo">Inspiration</a></li>
+              <li class="menu-item"><a href="#b2b">B2B</a></li>
+              <li class="menu-item"><a href="#more">Mehr</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
 
