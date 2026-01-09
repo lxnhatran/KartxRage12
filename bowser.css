@@ -1318,10 +1318,12 @@ footer#footer #ot-sdk-btn:hover,
 
   /* Burger IMMER rechts am Bildschirm */
   .mobile-burger{
-    position: fixed !important;          /* <- DAS ist der Gamechanger */
-    top: 22px !important;                /* gleiche Höhe wie Logo */
+    position: fixed !important;          /* <- DAS ist der Gamechanger */              /* gleiche Höhe wie Logo */
     right: 16px !important;              /* rechter Bildschirmrand */
     left: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
 
     z-index: 100000 !important;
 
