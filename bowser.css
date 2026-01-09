@@ -1394,3 +1394,10 @@ footer#footer #ot-sdk-btn:hover,
     padding-top: 0 !important;
   }
 }
+
+/* DESKTOP ONLY – Logo minimal nach oben */
+@media (min-width: 992px){
+  #header .header-logo{
+    margin-top: -10px !important;
+  }
+}
